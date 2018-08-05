@@ -8,7 +8,6 @@ use JMS\Serializer\Annotation as Serializer;
 /**
  * @ORM\Entity
  * @ORM\Table()
- * @Serializer\ExclusionPolicy("ALL")
  */
 class Article
 {
@@ -16,19 +15,19 @@ class Article
      * @ORM\Column(type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
-     * @Serializer\Expose
+     * @Serializer\Groups({"list"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=100)
-     * @Serializer\Expose
+     * @Serializer\Groups({"list", "detail"})
      */
     private $title;
 
     /**
      * @ORM\Column(type="text")
-     * @Serializer\Expose
+     * @Serializer\Groups({"list", "detail"})
      */
     private $content;
 

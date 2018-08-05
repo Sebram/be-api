@@ -10,8 +10,12 @@ index:
 ###### Articles ######
 
 article_all:
-    path: /articles/listing
+    path: /articles
     defaults: { _controller: 'App\Api\Controller\ArticleController::listing' }
+
+article_create:
+    path: /articles/create
+    defaults: { _controller: 'App\Api\Controller\ArticleController::create' }
 
 article_show:
     path: /articles/{id}
@@ -19,7 +23,4 @@ article_show:
     requirements:
         article_id: \d+
 
-article_create:
-    path: /articles
-    defaults: { _controller: 'App\Api\Controller\ArticleController::create' }
 
