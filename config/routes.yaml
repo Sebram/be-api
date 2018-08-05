@@ -1,10 +1,25 @@
 # This file is the entry point to configure your own HTTP routes.
 # Files in the routes/ subdirectory configure the routes for your dependencies.
 
+############ BE-API
+
 index:
     path: /
     defaults: { _controller: 'App\Api\Controller\DefaultController::index' }
 
-show_article:
+###### Articles ######
+
+article_all:
+    path: /articles/listing
+    defaults: { _controller: 'App\Api\Controller\ArticleController::listing' }
+
+article_show:
     path: /articles/{id}
     defaults: { _controller: 'App\Api\Controller\ArticleController::show' }
+    requirements:
+        article_id: \d+
+
+article_create:
+    path: /articles
+    defaults: { _controller: 'App\Api\Controller\ArticleController::create' }
+
