@@ -3,4 +3,8 @@
 
 index:
     path: /
-    defaults: { _controller: 'App\Api\Controller\DefaultController::indexAction' }
+    defaults: { _controller: 'App\Api\Controller\DefaultController::index' }
+
+show_article:
+    path: /articles/{id}
+    defaults: { _controller: 'App\Api\Controller\ArticleController::show' }

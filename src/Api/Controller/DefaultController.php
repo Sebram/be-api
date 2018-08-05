@@ -8,11 +8,12 @@ use Symfony\Component\HttpFoundation\Response;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="api")
+     * @Route("/", name="index")
      */
-    public function indexAction(Request $request)
+    public function index(Request $request)
     {
-        $index_response = ["Hi !", "Welcome", "to the", "Be-Api new restful Api", "for Dev."];
+    	$date = date("d-m-Y H:s:i", time());
+        $index_response = array( "date"=>$date,"appname"=>"BE API", "reponse"=>"BE HAPPY*API. Hi ! Welcome to the Be-Api new restful Api for Developpers.", "version"=>"1.0",  "code"=>"200" );
         $data = $this->get('jms_serializer')->serialize($index_response, 'json');
 
         $response = new Response($data);
