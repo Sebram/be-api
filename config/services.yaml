@@ -6,6 +6,10 @@
 parameters:
 
 services:
+    # serializer_handler.article:
+    #     class: App\Api\Serializer\Handler\ArticleHandler
+    #     tags:
+    #         - { name: jms_serializer.subscribing_handler }
 
     # default configuration for services in *this* file
     _defaults:

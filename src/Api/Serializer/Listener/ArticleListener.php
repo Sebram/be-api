@@ -14,7 +14,6 @@ Class ArticleListener implements EventSubscriberInterface{
 				'format' => 'json',
 				'class' => 'App\Api\Entity\Article',
 				'method' => 'onPostSerialize',
-
 			]
 		];
 	}
@@ -22,7 +21,7 @@ Class ArticleListener implements EventSubscriberInterface{
 	public static function onPostSerialize(ObjectEvent $event) {
 	 	
 	 	$date = new \Datetime();
-	 	
+
 	 	$event->getVisitor()->addData('serialized_at', $date->format('l jS \of F Y h:s:i'));
 
 	}

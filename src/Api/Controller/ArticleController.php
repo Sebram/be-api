@@ -10,7 +10,8 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use App\Api\Entity\Article;
 
 class ArticleController extends Controller
-{
+{   
+ 
     /**
      * @Route("/articles/create", name="article_create")
      */
@@ -21,8 +22,12 @@ class ArticleController extends Controller
         $em = $this->getDoctrine()->getManager();
         $em->persist($article);
         $em->flush();
+$chat =" _ _/|
+ \'o.0'
+ =(___)=
+    U";
 
-        return new Response('', Response::HTTP_CREATED);
+        return new Response($chat, Response::HTTP_CREATED);
     }
 
      /**
